@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/shared/layout";
 import Dashboard from "./pages/dashboard";
-import Customers from "./pages/customers";
+import Account from "./pages/account";
 import "./App.css";
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
           element: <Dashboard />,
         },
         {
-          path: "customers",
-          element: <Customers />,
+          path: "/account",
+          element: <Account />
         },
         {
           path: "/",

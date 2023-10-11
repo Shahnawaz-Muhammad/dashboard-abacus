@@ -3,10 +3,12 @@ import { DASHBOARD_SIDEBAR_LINKS } from "../../../lib/constants";
 import {MdOutlineKeyboardArrowLeft} from "react-icons/md"
 import logo from "../../../assets/logo 1.svg";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export default function Sidebar() {
+
+export default function Sidebar({handleSidebar}) {
   return (
-    <div className="bg-[#0A163B]  py-5  w-1/6 flex flex-col justify-between relative">
+    <div className="bg-[#0A163B]  py-5 h-full  flex flex-col justify-between relative">
       <div className="h-full flex flex-col gap-8 justify-center items-center">
         <div className="flex items-center justify-center w-full relative">
           <img src={logo} alt="" width={120} />
@@ -25,8 +27,12 @@ export default function Sidebar() {
         </div>
       </div>
       <div className="absolute top-6 right-0">
-        <button className="text-white py-2 rounded-l-lg bg-gray-600"><MdOutlineKeyboardArrowLeft className="text-lg"/></button>
+        <button className="text-white py-2 rounded-l-lg bg-gray-600" onClick={handleSidebar}><MdOutlineKeyboardArrowLeft className="text-lg"/></button>
       </div>
     </div>
   );
 }
+
+Sidebar.propTypes = {
+  handleSidebar: PropTypes.bool.isRequired, 
+};

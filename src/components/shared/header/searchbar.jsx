@@ -7,7 +7,7 @@ function  SearchBar() {
 
 
   return (
-    <div className="flex flex-row z-50" ref={dropdownRef}>
+    <div className="hidden md:flex md:flex-row z-50" ref={dropdownRef}>
       
           <div className="relative items-center">
             <div
@@ -18,7 +18,7 @@ function  SearchBar() {
             <input
               type="text"
               placeholder="Type Your Search..."
-              className="bg-[#0A163B] text-black text-sm focus:outline-none active:outline-none shadow-lg w-[20rem] md:w-[22rem] lg:w-[25rem] h-10 pl-12 pr-24 md:pr-28  rounded-xl"
+              className="bg-[#0A163B] text-black text-sm focus:outline-none active:outline-none shadow-lg  h-10 pl-12 pr-24 md:pr-28  rounded-xl"
             />
             </div>
         

@@ -28,9 +28,9 @@ const options = {
 
 export default function DoughnutChart() {
   return (
-    <div className="h-[8rem] w-[8rem] relative flex justify-center items-center">
+    <div className="h-[6rem] w-[6rem] relative flex justify-center items-center">
       <Doughnut data={data} options={options} />
-      <div className='w-[6rem] h-[6rem] bg-white absolute rounded-full flex justify-center items-center text-black'>6%</div>
+      <div className='w-[5rem] h-[5rem] bg-white absolute rounded-full flex justify-center items-center text-black'>6%</div>
     </div>
   );
 }

@@ -14,16 +14,16 @@ const Dashboard = () => {
             <Activities />
           </div>
         </div>
-        <div className="h-full w-full md:w-1/2 lg:w-[40%] flex-1 lg:p-5">
+        <div className="h-full w-full md:w-1/2 lg:w-[40%] flex-none lg:p-5">
           <img
             src={statsImg}
             alt="stats info image"
-            className="w-full h-full"
+            className="w-full h-full "
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-8">
         <div className="w-full">
           <div className="flex justify-between py-2 px-2 text-white">
             <p className="text-sm">Project Views</p>

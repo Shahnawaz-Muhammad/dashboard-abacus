@@ -7,7 +7,7 @@ function  SearchBar() {
 
 
   return (
-    <div className="hidden md:flex md:flex-row z-30" ref={dropdownRef}>
+    <div className="w-full hidden md:flex md:flex-row z-0" ref={dropdownRef}>
       
           <div className="relative items-center flex w-full">
             <div

@@ -14,9 +14,13 @@ export default function Layout() {
     <div className="w-full flex flex-col bg-[#010D25]">
       <div className="flex h-full w-full">
         <div
-          className={`${
-            showSidebar ? "block w-60 lg:w-1/6" : "hidden w-0"
-          } transition-all ease-in-out duration-200  absolute lg:relative `}
+          className={`hidden md:block w-1/5 flex-shrink-0 transition-all ease-in-out duration-200  lg:relative `}
+        >
+          <Sidebar handleSidebar={handleSidebar} />
+        </div>
+
+        <div
+          className={`block md:hidden w-60 flex-shrink-0 transition-all ease-in-out duration-200 absolute `}
         >
           <Sidebar handleSidebar={handleSidebar} />
         </div>

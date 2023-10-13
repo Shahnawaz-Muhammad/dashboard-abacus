@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <div className="bg-transparent h-16 px-4 flex items-center justify-end ">
       <div className="flex items-center justify-between w-full ">
-        <div className="flex  md:flex-row justify-between w-full gap-5 flex-initial">
+        <div className="flex  md:flex-row justify-between w-[50%] gap-5 flex-initial">
           <SearchBar />
         </div>
         <div className="flex gap-5 items-center max-w-full">

@@ -1,7 +1,7 @@
 import australia from "../../../assets/australia-flag.svg";
 const Footer = () => {
   return (
-    <div className=" max-w-screen-xl mx-auto w-full grid md:grid-cols-3 lg:grid-cols-5 gap-5 py-10">
+    <div className=" max-w-screen-xl mx-auto w-full grid md:grid-cols-3 lg:grid-cols-5 gap-5 py-5">
       <div className="lg:col-span-2">
         <div className="flex flex-col gap-6 pr-6">
           <h1 className="text-white text-4xl font-semibold">
@@ -85,6 +85,12 @@ const Footer = () => {
           <li>Cyber Security</li> <li>Bug Hunter</li> <li>FAQs</li>{" "}
           <li>Contact Us</li>
         </ul>
+      </div>
+      <div className="col-span-full flex justify-center mt-10">
+        <h2 className="text-md text-white">
+          Actors Index Pty Ltd. ABN 123456789 Copyright ©2024. All Rights
+          Reserved. Sitemap
+        </h2>
       </div>
     </div>
   );

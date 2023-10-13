@@ -8,7 +8,7 @@ const RecentStats = () => {
       <h3>7 Days</h3>
     </div>
     <div className="w-full flex flex-col gap-10">
-      <div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col xl:flex-row gap-10">
         <div className="w-full p-2 rounded-xl bg-[#0A163B] flex gap-5">
           <div className="bg-gray-600 p-3 rounded-xl ">
             <FaPeopleGroup className="text-3xl" />
@@ -28,7 +28,7 @@ const RecentStats = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-10">
+      <div className="flex flex-col xl:flex-row gap-10">
         <div className="w-full p-2 rounded-xl bg-[#0A163B] flex gap-5">
           <div className="bg-gray-600 p-3 rounded-xl ">
             <FaPeopleGroup className="text-3xl" />

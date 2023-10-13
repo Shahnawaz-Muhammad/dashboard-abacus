@@ -14,13 +14,14 @@ import uplaodImg from "../../assets/image-uploaded.png";
 import Location from "../../components/profile-update-form/Location";
 import { Link } from "react-router-dom";
 import InputField from "../shared/inputs/InputField";
+import SelectField from "../shared/inputs/SelectField";
 
 const Form = () => {
   return (
     <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
       <div className="col-span-full">
         <label
-          htmlFor="first-name"
+          htmlFor="username"
           className="block text-md font-normal leading-6 text-white"
         >
           Username
@@ -29,16 +30,16 @@ const Form = () => {
           <div className="relative w-full">
             <input
               type="text"
-              name="first-name"
-              id="first-name"
+              name="username"
+              id="username"
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
             <AiOutlineEdit className="text-white absolute top-3 right-3 text-xl" />
           </div>
           <div className="flex gap-5 items-center w-full">
             <input
-              id="offers"
-              name="offers"
+              id="verified"
+              name="verified"
               type="checkbox"
               className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
             />
@@ -67,27 +68,84 @@ const Form = () => {
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Preferred Greeting"
-          name="preferred-greeting"
+        <SelectField
+          label="Preferred greeting"
           id="preferred-greeting"
+          options={["Mr.", "Mrs.", "Miss."]}
         />
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Job title in your business"
-          name="job-title"
-          id="job-title"
-        />
+        <label
+          htmlFor="job-title"
+          className="block text-md font-normal leading-6 text-white"
+        >
+          Job title in your business
+        </label>
+        <div className="mt-2 w-full flex flex-col sm:flex-row justify-center gap-5">
+          <div className="relative w-full">
+            <input
+              type="text"
+              name="job-title"
+              id="job-title"
+              className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            />
+            <AiOutlineEdit className="text-white absolute top-3 right-3 text-xl" />
+          </div>
+        </div>
       </div>
 
       <div className="sm:col-span-3">
-        <InputField label="Email" name="email" id="email" />
+        <label
+          htmlFor="email"
+          className="block text-md font-normal leading-6 text-white"
+        >
+          Email
+        </label>
+        <div className="mt-2 w-full flex flex-col sm:flex-row justify-center gap-5">
+          <div className="relative w-full">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            />
+            <AiOutlineEdit className="text-white absolute top-3 right-3 text-xl" />
+          </div>
+        </div>
       </div>
 
-      <div className="sm:col-span-3">
-        <InputField label="Mobile" name="mobile" id="mobile" />
+      <div className="sm:col-span-3 relative">
+        <div>
+          <label
+            for="business-country"
+            class="block text-md font-medium leading-6 text-gray-100"
+          >
+            Country your business is located
+          </label>
+          <div class="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="business-country"
+              id="business-country"
+              class="block w-full rounded-lg border py-2 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
+            />
+            <div class="absolute inset-y-0 left-0 flex items-center ">
+              <select
+                id="country-code"
+                name="country-code"
+                class="h-full rounded-md border-0 bg-transparent focus:outline-none py-0 pl-2 pr-7 text-gray-400 sm:text-sm"
+              >
+                <option>USD</option>
+                <option>CAD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+            <div className="absolute inset-y-0 right-3 flex items-center">
+              <AiOutlineEdit className="text-white text-lg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="col-span-full w-full flex flex-col md:flex-row md:gap-16">
@@ -100,13 +158,13 @@ const Form = () => {
           </label>
           <div className="mt-3 flex relative justify-center w-60 h-full rounded-lg border border-dashed border-gray-400 px-6 py-5">
             <label
-              htmlFor="file-upload"
+              htmlFor="profile-image"
               className="absolute cursor-pointer rounded-md w-full h-full top-0 font-semibold focus-within:outline-none "
             >
               {/* <span>Upload a file</span> */}
               <input
-                id="file-upload"
-                name="file-upload"
+                id="profile-image"
+                name="profile-image"
                 type="file"
                 className="sr-only"
               />
@@ -115,7 +173,7 @@ const Form = () => {
               <BsCloudUpload className="w-10 h-10 mx-auto text-[#F49F1C]" />
               <p className="pl-1 text-sm text-white">Drop your files here</p>
               <div className="mt-4 flex text-sm leading-6 text-gray-600">
-                <p className="text-xs leading-5 text-gray-600">
+                <p className="text-xs leading-5 text-gray-400">
                   .pdf .tiff .jpg (2.5 MB maximum file size) 502 pixels x 502
                   pixels
                 </p>
@@ -156,39 +214,83 @@ const Form = () => {
         </h2>
       </div>
 
-      <div className="sm:col-span-3">
-        <InputField
-          label="Business or Trading name"
-          name="business-name"
-          id="business-name"
-        />
+      <div className="sm:col-span-3 relative">
+        <div>
+          <label
+            htmlFor="business-name"
+            className="block text-md font-normal leading-6 text-white"
+          >
+            Business or Trading name
+          </label>
+          <div className="mt-2">
+            <input
+              type="text"
+              name="business-name"
+              id="business-name"
+              className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div className="absolute bottom-4 right-3 flex items-center">
+          <AiOutlineEdit className="text-white text-lg" />
+        </div>
+      </div>
+
+      <div className="sm:col-span-3 relative">
+        <div>
+          <label
+            for="price"
+            class="block text-md font-medium leading-6 text-gray-100"
+          >
+            Country your business is located
+          </label>
+          <div class="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="business-country"
+              id="business-country"
+              class="block w-full rounded-lg border py-2.5 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
+            />
+            <div class="absolute inset-y-0 left-0 flex items-center ">
+              <select
+                id="business-country-options"
+                name="business-country-options"
+                class="h-full rounded-md border-0 bg-transparent focus:outline-none py-0 pl-2 pr-7 text-gray-400 sm:text-sm"
+              >
+                <option>Select</option>
+                <option>USD</option>
+                <option>CAD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+            <div className="absolute inset-y-0 right-3 flex items-center">
+              <AiOutlineEdit className="text-white text-lg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Country your business is located"
-          name="business-country"
-          id="business-country"
-        />
-      </div>
-
-      <div className="sm:col-span-3">
-        <InputField
+        <SelectField
           label="State/Province"
-          name="business-state"
-          id="business-state"
+          id="state"
+          options={["Option A", "Option B", "Option C"]}
         />
       </div>
 
       <div className="sm:col-span-3">
-        <InputField label="Postal code" name="postal-code" id="postal-code" />
+        <SelectField
+          label="Postal Code"
+          id="postal-code"
+          options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
+        />
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Business Category"
-          name="business-category"
+        <SelectField
+          label="Business category"
           id="business-category"
+          options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
         />
       </div>
 
@@ -209,10 +311,10 @@ const Form = () => {
         </label>
         <div className="mt-2">
           <textarea
-            type="text"
-            name="first-name"
+            name="business-description"
             rows={6}
-            id="first-name"
+            id="business-description"
+            placeholder="Describe your business for other users"
             className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
           />
         </div>
@@ -220,25 +322,22 @@ const Form = () => {
 
       <div className="col-span-full lg:col-span-3 ">
         <label
-          htmlFor="first-name"
+          htmlFor="business-logo"
           className="block text-md font-normal leading-6 text-white"
         >
           Business logo
         </label>
         <div className="flex h-full xl:h-40 gap-10">
           <div className="mt-2 flex relative justify-center w-1/2 h-full rounded-lg border border-dashed border-gray-400 px-6 py-5">
-            <label
-              htmlFor="file-upload"
-              className="absolute cursor-pointer rounded-md w-full h-full top-0 font-semibold focus-within:outline-none "
-            >
+            <div className="absolute cursor-pointer rounded-md w-full h-full top-0 font-semibold focus-within:outline-none ">
               {/* <span>Upload a file</span> */}
               <input
-                id="file-upload"
-                name="file-upload"
+                id="business-logo"
+                name="business-logo"
                 type="file"
                 className="sr-only"
               />
-            </label>
+            </div>
             <div className="text-center">
               <BsCloudUpload className="w-10 h-10 mx-auto text-[#F49F1C]" />
               <p className="pl-1 text-sm text-white">Drop your files here</p>
@@ -258,18 +357,18 @@ const Form = () => {
 
       <div className="sm:col-span-full w-full mt-10 sm:mt-6">
         <label
-          htmlFor="first-name"
+          htmlFor="keywords"
           className="block text-md font-normal leading-6 text-white"
         >
-          Sub-category
+          ENTER KEYWORDS WHICH MATCH YOUR SERVICES
         </label>
         <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-3">
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keywords"
+                id="keywords"
                 placeholder="Keyword for Service 1"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -279,8 +378,8 @@ const Form = () => {
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keywords-2"
+                id="keywords-2"
                 placeholder="Keyword for Service 2"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -290,8 +389,8 @@ const Form = () => {
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keywords-3"
+                id="keywords-3"
                 placeholder="Keyword for Service 3"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -318,24 +417,24 @@ const Form = () => {
 
       <div className="sm:col-span-full">
         <label
-          htmlFor="first-name"
+          htmlFor="password"
           className="block text-md font-normal leading-6 text-white"
         >
-          Business category
+          Password
         </label>
         <div className="flex gap-5 items-center mt-2">
           <div className="w-1/2">
             <input
               type="text"
-              name="first-name"
-              id="first-name"
-              placeholder="Keyword for Service 1"
+              name="password"
+              id="password"
+              placeholder="********"
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
           </div>
           <div className="w-1/2 flex gap-3 items-center">
-            <h2 className="underline text-white">Change Password?</h2>
-            <AiOutlineEdit className="text-[#F69E1E] text-2xl" />
+            <h2 className="underline text-white cursor-pointer">Change Password?</h2>
+            <AiOutlineEdit className="text-[#F69E1E] text-2xl cursor-pointer" />
           </div>
         </div>
       </div>

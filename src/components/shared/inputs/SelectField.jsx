@@ -5,7 +5,7 @@ const SelectField = ({ label, id, options, ...rest }) => {
     <div>
       <label
         htmlFor={id}
-        className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+        className="block mb-3 text-sm font-medium text-gray-100 dark:text-white"
       >
         {label}
       </label>

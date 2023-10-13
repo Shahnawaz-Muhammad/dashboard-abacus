@@ -19,17 +19,13 @@ export default function Header() {
           <div className="relative h-full w-full border border-[#D8D8D8] p-3 rounded-xl">
             <HiOutlineBell className="text-white text-xl" />
             <span className="sr-only">Notifications</span>
-            <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-[#D8D8D8] border-2 border-white rounded-full -top-1 -right-2 ">
-             
-            </div>
+            <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-[#D8D8D8] border-2 border-white rounded-full -top-1 -right-2 "></div>
           </div>
 
           <div className="relative h-full w-full border border-[#D8D8D8] p-3 rounded-xl">
             <BiMessageDetail className="text-white text-xl" />
             <span className="sr-only">Notifications</span>
-            <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-[#D8D8D8] border-2 border-white rounded-full -top-1 -right-2 ">
-             
-            </div>
+            <div className="absolute inline-flex items-center justify-center w-4 h-4 text-xs font-bold text-white bg-[#D8D8D8] border-2 border-white rounded-full -top-1 -right-2 "></div>
           </div>
 
           <Menu as="div" className="relative">
@@ -58,16 +54,11 @@ export default function Header() {
             >
               <Menu.Items className="origin-top-right z-10 absolute right-0 mt-2 w-56 rounded-sm shadow-md p-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <Menu.Item>
-                  {({ active }) => (
-                    <div className="flex flex-col px-4 py-2">
-                      <h1 className="text-sm md:text-md">
-                        Hello, Developer User
-                      </h1>
-                      <p className={`${active && "bg-gray-100"},   text-sm`}>
-                        Helpdesk Record Manager
-                      </p>
-                    </div>
-                  )}
+                  <div className="flex flex-col px-4 py-2">
+                    <h1 className="text-sm md:text-md">
+                      Hello, Developer User
+                    </h1>
+                  </div>
                 </Menu.Item>
                 <Menu.Item>
                   {({ active }) => (
@@ -82,31 +73,18 @@ export default function Header() {
                     </div>
                   )}
                 </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      onClick={() => navigate("/settings")}
-                      className={`
-											${active && "bg-gray-100"},
-											'active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200'
-										`}
-                    >
-                      Settings
-                    </div>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      className={`
-                  ${active && "bg-gray-100"},
-                  'active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200'
-                `}
-                    >
-                      Sign out
-                    </div>
-                  )}
-                </Menu.Item>
+
+                <div
+                  className={`active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200`}
+                >
+                  Country
+                </div>
+
+                <div
+                  className={`active:bg-gray-200 rounded-sm px-4 py-2 text-gray-700 cursor-pointer focus:bg-gray-200`}
+                >
+                  State
+                </div>
               </Menu.Items>
             </Transition>
           </Menu>

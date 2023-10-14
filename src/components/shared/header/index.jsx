@@ -1,13 +1,20 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./searchbar";
 import { HiOutlineBell } from "react-icons/hi";
 import { BiMessageDetail } from "react-icons/bi";
+import { FormContext } from "../../../context/formContext";
 
 export default function Header() {
   const navigate = useNavigate();
-  // const [enabled, setEnabled] = useState(false)
+
+  const {state} = useContext(FormContext)
+  const {formData} = state
+
+  const {username} = formData
+
+  console.log(username)
 
   return (
     <div className="bg-transparent h-16 px-4 flex items-center justify-end ">
@@ -39,7 +46,7 @@ export default function Header() {
                       'url("https://source.unsplash.com/80x80?face")',
                   }}
                 >
-                  <span className="sr-only">Marc Backes</span>
+                  <span className="sr-only">{username}</span>
                 </div>
               </Menu.Button>
             </div>
@@ -55,8 +62,8 @@ export default function Header() {
               <Menu.Items className="origin-top-right z-10 absolute right-0 mt-2 w-56 rounded-sm shadow-md p-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <Menu.Item>
                   <div className="flex flex-col px-4 py-2">
-                    <h1 className="text-sm md:text-md">
-                      Hello, Developer User
+                    <h1 className="text-lg bg-green-500 p-2 rounded-lg">
+                      {username}
                     </h1>
                   </div>
                 </Menu.Item>

@@ -16,7 +16,7 @@ export default function Layout() {
         <div
           className={`${
             showSidebar ? "block w-60 lg:w-1/6" : "hidden w-0"
-          } transition-all ease-in-out duration-200  absolute lg:relative `}
+          } transition-all ease-in-out hidden lg:block duration-200  `}
         >
           <Sidebar handleSidebar={handleSidebar} />
         </div>

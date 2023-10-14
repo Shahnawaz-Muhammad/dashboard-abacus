@@ -2,8 +2,6 @@ import statsImg from "../../assets/stats-info.png";
 import Activities from "../../components/Activities";
 import RecentStats from "../../components/RecentStats";
 import { BsEyeFill } from "react-icons/bs";
-// import { PolarChart } from "../../components/charts/polarchart";
-// import DoughnutChart from "../../components/charts/doghnut";
 import { ViewsChart } from "../../components/charts/activitycharts/Views";
 // import SelectField from "../../components/shared/inputs/SelectField";
 

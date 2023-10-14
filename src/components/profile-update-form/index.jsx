@@ -3,29 +3,29 @@ import { AiOutlineEdit } from "react-icons/ai";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 // import { MdOutlineVerified } from "react-icons/md";
 
-import Location from "../../components/profile-update-form/Location";
-import ContactPerson from "./contact-person";
-import BusinessDetails from "./business-details";
-import Security from "./security";
-import Membership from "./membership";
-import { useContext } from "react";
-import { FormContext } from "../../context/formContext";
+// import Location from "../../components/profile-update-form/Location";
+// import ContactPerson from "./contact-person";
+// import BusinessDetails from "./business-details";
+// import Security from "./security";
+// import Membership from "./membership";
+// import { useContext } from "react";
+// import { FormContext } from "../../context/formContext";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const { dispatch } = useContext(FormContext); 
+  // const { dispatch } = useContext(FormContext); 
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
-    dispatch({ type: "UPDATE_FIELD", field: "username", value: data.username });
-    dispatch({ type: "UPDATE_FIELD", field: "firstName", value: data.firstName });
-    dispatch({ type: "UPDATE_FIELD", field: "email", value: data.email });
-    dispatch({
-      type: "UPDATE_FIELD",
-      field: "familyName",
-      value: data.familyName,
-    });
+    // dispatch({ type: "UPDATE_FIELD", field: "username", value: data.username });
+    // dispatch({ type: "UPDATE_FIELD", field: "firstName", value: data.firstName });
+    // dispatch({ type: "UPDATE_FIELD", field: "email", value: data.email });
+    // dispatch({
+    //   type: "UPDATE_FIELD",
+    //   field: "familyName",
+    //   value: data.familyName,
+    // });
     console.log("hello, this is the submitted form", data);
   };
   return (
@@ -65,7 +65,7 @@ const Form = () => {
           </div>
         </div>
 
-        <ContactPerson register={register} />
+        {/* <ContactPerson register={register} />
 
         <BusinessDetails />
 
@@ -73,7 +73,7 @@ const Form = () => {
 
         <Security />
 
-        <Membership />
+        <Membership /> */}
 
         <div className="sm:col-span-full w-full mt-10 sm:mt-6 flex justify-end gap-5 md:gap-10">
           <button type="submit" className="bg-gray-200 rounded-full px-10 py-3">

@@ -86,8 +86,37 @@ const Form = () => {
         <InputField label="Email" name="email" id="email" />
       </div>
 
-      <div className="sm:col-span-3">
-        <InputField label="Mobile" name="mobile" id="mobile" />
+      <div className="sm:col-span-3 relative">
+        <div>
+          <label
+           htmlFor="business-country"
+            className="block text-md font-medium leading-6 text-gray-100"
+          >
+            Country your business is located
+          </label>
+          <div className="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="business-country"
+              id="business-country"
+              className="block w-full rounded-lg border py-2 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
+            />
+            <div className="absolute inset-y-0 left-0 flex items-center ">
+              <select
+                id="country-code"
+                name="country-code"
+                className="h-full rounded-md border-0 bg-transparent focus:outline-none py-0 pl-2 pr-7 text-gray-400 sm:text-sm"
+              >
+                <option>USD</option>
+                <option>CAD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+            <div className="absolute inset-y-0 right-3 flex items-center">
+              <AiOutlineEdit className="text-white text-lg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="col-span-full w-full flex flex-col md:flex-row md:gap-16">
@@ -164,12 +193,38 @@ const Form = () => {
         />
       </div>
 
-      <div className="sm:col-span-3">
-        <InputField
-          label="Country your business is located"
-          name="business-country"
-          id="business-country"
-        />
+      <div className="sm:col-span-3 relative">
+        <div>
+          <label
+           htmlFor="price"
+            className="block text-md font-medium leading-6 text-gray-100"
+          >
+            Country your business is located
+          </label>
+          <div className="relative mt-2 rounded-md shadow-sm">
+            <input
+              type="text"
+              name="business-country"
+              id="business-country"
+              className="block w-full rounded-lg border py-2.5 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
+            />
+            <div className="absolute inset-y-0 left-0 flex items-center ">
+              <select
+                id="business-country-options"
+                name="business-country-options"
+                className="h-full rounded-md border-0 bg-transparent focus:outline-none py-0 pl-2 pr-7 text-gray-400 sm:text-sm"
+              >
+                <option>Select</option>
+                <option>USD</option>
+                <option>CAD</option>
+                <option>EUR</option>
+              </select>
+            </div>
+            <div className="absolute inset-y-0 right-3 flex items-center">
+              <AiOutlineEdit className="text-white text-lg" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="sm:col-span-3">

@@ -61,13 +61,13 @@ const Form = () => {
           </div>
         </div>
 
-        <ContactPerson />
+        <ContactPerson register={register}/>
 
-        <BusinessDetails />
+        <BusinessDetails register={register}/>
 
-        <Location />
+        <Location register={register}/>
 
-        <Security />
+        <Security register={register}/>
 
         <Membership />
         <div className="sm:col-span-full w-full mt-10 sm:mt-6 flex justify-end gap-5 md:gap-10">

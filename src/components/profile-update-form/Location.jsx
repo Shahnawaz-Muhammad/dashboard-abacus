@@ -1,8 +1,8 @@
 import { HiMiniPlusCircle } from "react-icons/hi2";
 import { GoLocation } from "react-icons/go";
-import SelectField from "../shared/inputs/SelectField";
+import PropTypes from "prop-types";
 
-const Location = () => {
+const Location = ({ register }) => {
   return (
     <>
       <div className=" col-span-full">
@@ -14,54 +14,77 @@ const Location = () => {
       <div className="col-span-full">
         <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-3 ">
-            {/* <label
-                  htmlFor="countries"
-                  className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
-                >
-                  Location 1
-                </label>
-                <select
-                  id="countries"
-                  className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
-                >
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>France</option>
-                  <option>Germany</option>
-                </select> */}
-            <SelectField
-              label="Location 1"
-              id="countries"
-              options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-            />
+            <label
+              htmlFor="location1"
+              className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+            >
+              Location 1
+            </label>
+            <select
+              id="location1"
+              name="location1"
+              {...register("location1", { required: true })}
+              className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+            >
+              <option>United States</option>
+              <option>Canada</option>
+              <option>France</option>
+              <option>Germany</option>
+            </select>
           </div>
 
           <div className="sm:col-span-3 ">
-            <SelectField
-              label="State/Territory"
-              id="state"
-              options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-            />
+            <label
+              htmlFor="state3"
+              className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+            >
+              State/teritory
+            </label>
+            <select
+              id="state3"
+              name="state3"
+              {...register("state3", { required: true })}
+              className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+            >
+              <option>United States</option>
+              <option>Canada</option>
+              <option>France</option>
+              <option>Germany</option>
+            </select>
           </div>
 
           <div className="sm:col-span-3 ">
-          <SelectField
-              label="Region"
-              id="region"
-              options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-            />
+            <label
+              htmlFor="region3"
+              className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+            >
+              State/teritory
+            </label>
+            <select
+              id="region2"
+              name="region2"
+              {...register("region2", { required: true })}
+              className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+            >
+              <option>United States</option>
+              <option>Canada</option>
+              <option>France</option>
+              <option>Germany</option>
+            </select>
           </div>
         </div>
         <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="location2"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
               Location 2
             </label>
             <select
-              id="countries"
+              id="location2"
+              name="location2"
+              {...register("location2", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -73,13 +96,15 @@ const Location = () => {
 
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="state1"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
-              State/Territory
+              State/teritory
             </label>
             <select
-              id="countries"
+              id="state2"
+              name="state2"
+              {...register("state2", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -91,13 +116,15 @@ const Location = () => {
 
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="region3"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
-              Region
+              State/teritory
             </label>
             <select
-              id="countries"
+              id="region3"
+              name="region3"
+              {...register("region3", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -110,13 +137,15 @@ const Location = () => {
         <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="location3"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
               Location 3
             </label>
             <select
-              id="countries"
+              id="location3"
+              name="location3"
+              {...register("location3", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -128,13 +157,15 @@ const Location = () => {
 
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="state1"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
-              State/Territory
+              State/teritory
             </label>
             <select
-              id="countries"
+              id="state2"
+              name="state2"
+              {...register("state2", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -146,13 +177,15 @@ const Location = () => {
 
           <div className="sm:col-span-3 ">
             <label
-              htmlFor="countries"
+              htmlFor="region2"
               className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
             >
-              Region
+              State/teritory
             </label>
             <select
-              id="countries"
+              id="region1"
+              name="region1"
+              {...register("region1", { required: true })}
               className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
             >
               <option>United States</option>
@@ -173,4 +206,7 @@ const Location = () => {
   );
 };
 
+Location.propTypes = {
+  register: PropTypes.func.isRequired,
+};
 export default Location;

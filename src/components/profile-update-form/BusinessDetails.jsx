@@ -5,9 +5,10 @@ import { PiAddressBookLight } from "react-icons/pi";
 import { BsCloudUpload } from "react-icons/bs";
 
 import uploadImg from "../../assets/image-uploaded.png";
-import InputField from "../shared/inputs/InputField";
-import SelectField from "../shared/inputs/SelectField";
-const BusinessDetails = () => {
+
+import PropTypes from "prop-types";
+
+const BusinessDetails = ({ register }) => {
   return (
     <>
       <div className="mt-10 col-span-full">
@@ -21,11 +22,23 @@ const BusinessDetails = () => {
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Business or Trading name"
-          name="business-name"
-          id="business-name"
-        />
+        <div>
+          <label
+            htmlFor="email"
+            className="block text-md font-normal leading-6 text-white"
+          >
+            Business or Trading name
+          </label>
+          <div className="mt-2">
+            <input
+              type="email"
+              name="business-name"
+              id="business-name"
+              {...register("email", { required: true })}
+              className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="sm:col-span-3 relative">
@@ -39,8 +52,9 @@ const BusinessDetails = () => {
           <div className="relative mt-2 rounded-md shadow-sm">
             <input
               type="text"
-              name="business-country"
+              name="businessCountry"
               id="business-country"
+              {...register("businessCountry", { required: true })}
               className="block w-full rounded-lg border py-2.5 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
             />
             <div className="absolute inset-y-0 left-0 flex items-center ">
@@ -62,44 +76,89 @@ const BusinessDetails = () => {
         </div>
       </div>
 
-      <div className="sm:col-span-3">
-        <SelectField
-          label="State/Province"
-          name="business-state"
+      <div className="sm:col-span-3 ">
+        <label
+          htmlFor="business-state"
+          className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+        >
+          State/Province
+        </label>
+        <select
           id="business-state"
-          options={["Select your state", "Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-        />
+          name="businessState"
+          {...register("businessState", { required: true })}
+          className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+        >
+          <option>Select preferred greeting</option>
+          <option>Mr.</option>
+          <option>Miss.</option>
+          <option>Mrs.</option>
+        </select>
       </div>
 
-      <div className="sm:col-span-3">
-        <SelectField
-          label="Postal code"
+      <div className="sm:col-span-3 ">
+        <label
+          htmlFor="postal-code"
+          className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+        >
+          Postal Code
+        </label>
+        <select
           id="postal-code"
           name="postalCode"
-          options={["Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-        />
+          {...register("postalCode", { required: true })}
+          className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+        >
+          <option>Select postal code</option>
+          <option>Mr.</option>
+          <option>Miss.</option>
+          <option>Mrs.</option>
+        </select>
       </div>
 
-      <div className="sm:col-span-3">
-        <SelectField
-          label="Business Category"
-          name="business-category"
+      <div className="sm:col-span-3 ">
+        <label
+          htmlFor="business-category"
+          className="block mb-2 text-sm font-medium text-gray-100 dark:text-white"
+        >
+          Business Category
+        </label>
+        <select
           id="business-category"
-          options={["Select closest category", "Option A", "Option B", "Option C"]} // Additional props can be added here, e.g., value, onChange, etc.
-        />
+          name="businessCategory"
+          {...register("businessCategory", { required: true })}
+          className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
+        >
+          <option>Select postal code</option>
+          <option>Mr.</option>
+          <option>Miss.</option>
+          <option>Mrs.</option>
+        </select>
       </div>
 
       <div className="sm:col-span-3">
-        <InputField
-          label="Sub-category"
-          name="sub-category"
-          id="sub-category"
-        />
+        <div>
+          <label
+            htmlFor="sub-category"
+            className="block text-md font-normal leading-6 text-white"
+          >
+            Sub-category
+          </label>
+          <div className="mt-2">
+            <input
+              type="text"
+              name="sub-category"
+              id="sub-category"
+              {...register("firstName", { required: true })}
+              className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="col-span-full lg:col-span-3 ">
         <label
-          htmlFor="first-name"
+          htmlFor="business-description"
           className="block text-md font-normal leading-6 text-white"
         >
           Business description
@@ -107,9 +166,10 @@ const BusinessDetails = () => {
         <div className="mt-2">
           <textarea
             type="text"
-            name="first-name"
+            name="businessDescription"
             rows={6}
-            id="first-name"
+            id="business-description"
+            {...register("businessDescription", { required: true })}
             className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
           />
         </div>
@@ -125,14 +185,15 @@ const BusinessDetails = () => {
         <div className="flex h-full xl:h-40 gap-10">
           <div className="mt-2 flex relative justify-center w-1/2 h-full rounded-lg border border-dashed border-gray-400 px-6 py-5">
             <label
-              htmlFor="file-upload"
+              htmlFor="business-logo"
               className="absolute cursor-pointer rounded-md w-full h-full top-0 font-semibold focus-within:outline-none "
             >
               {/* <span>Upload a file</span> */}
               <input
-                id="file-upload"
-                name="file-upload"
+                id="business-logo"
+                name="businesslogo"
                 type="file"
+                {...register("businesslogo", { required: true })}
                 className="sr-only"
               />
             </label>
@@ -155,7 +216,7 @@ const BusinessDetails = () => {
 
       <div className="sm:col-span-full w-full mt-10 sm:mt-6">
         <label
-          htmlFor="first-name"
+          htmlFor="keyword1"
           className="block text-md font-normal leading-6 text-white"
         >
           Sub-category
@@ -165,8 +226,9 @@ const BusinessDetails = () => {
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keyword1"
+                id="keyword1"
+                {...register("keyword1", { required: true })}
                 placeholder="Keyword for Service 1"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -176,8 +238,9 @@ const BusinessDetails = () => {
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keyword2"
+                id="keyword2"
+                {...register("keyword2", { required: true })}
                 placeholder="Keyword for Service 2"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -187,8 +250,9 @@ const BusinessDetails = () => {
             <div className="mt-2">
               <input
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="keyword3"
+                id="keyword3"
+                {...register("keyword3", { required: true })}
                 placeholder="Keyword for Service 3"
                 className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
               />
@@ -205,6 +269,10 @@ const BusinessDetails = () => {
       </div>
     </>
   );
+};
+
+BusinessDetails.propTypes = {
+  register: PropTypes.func.isRequired,
 };
 
 export default BusinessDetails;

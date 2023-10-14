@@ -1,7 +1,8 @@
 import { AiOutlineEdit } from "react-icons/ai";
+import PropTypes from "prop-types";
 
 import { PiAddressBookLight } from "react-icons/pi";
-const ContactPerson = () => {
+const ContactPerson = ({ register }) => {
   return (
     <>
       <div className="mt-10 col-span-full">
@@ -24,6 +25,7 @@ const ContactPerson = () => {
               type="text"
               name="firstName"
               id="first-name"
+              {...register("firstName", { required: true })}
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
           </div>
@@ -43,6 +45,7 @@ const ContactPerson = () => {
               type="text"
               name="familyName"
               id="family-name"
+              {...register("familyName", { required: true })}
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
           </div>
@@ -58,6 +61,8 @@ const ContactPerson = () => {
         </label>
         <select
           id="preferred-greeting"
+          name="preferredGreeting"
+          {...register("preferredGreeting", { required: true })}
           className="bg-transparent border border-gray-300 text-gray-400 text-sm rounded-lg focus:outline-none block w-full p-2.5 "
         >
           <option>Select preferred greeting</option>
@@ -80,6 +85,7 @@ const ContactPerson = () => {
               type="text"
               name="jobTitle"
               id="job-title"
+              {...register("jobTitle", { required: true })}
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
             <AiOutlineEdit className="text-white absolute top-3 right-3 text-xl" />
@@ -88,7 +94,7 @@ const ContactPerson = () => {
       </div>
 
       <div className="sm:col-span-3">
-      <div>
+        <div>
           <label
             htmlFor="email"
             className="block text-md font-normal leading-6 text-white"
@@ -100,6 +106,7 @@ const ContactPerson = () => {
               type="email"
               name="email"
               id="email"
+              {...register("email", { required: true })}
               className="block w-full rounded-lg border-0 pl-3 pr-10 py-2.5 bg-transparent text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:outline-none placeholder:text-gray-400 sm:text-sm sm:leading-6"
             />
           </div>
@@ -117,14 +124,16 @@ const ContactPerson = () => {
           <div className="relative mt-2 rounded-md shadow-sm">
             <input
               type="text"
-              name="business-country"
+              name="businessCountry"
               id="business-country"
+              {...register("businessCountry", { required: true })}
               className="block w-full rounded-lg border py-2 pr-7 pl-24 bg-transparent  border-gray-400 text-gray-100 focus:outline-none placeholder:text-gray-400  sm:text-sm sm:leading-6"
             />
             <div className="absolute inset-y-0 left-0 flex items-center ">
               <select
                 id="country-code"
-                name="country-code"
+                name="countryCode"
+                {...register("countryCode", { required: true })}
                 className="h-full rounded-md border-0 bg-transparent focus:outline-none py-0 pl-2 pr-7 text-gray-400 sm:text-sm"
               >
                 <option>USD</option>
@@ -140,6 +149,10 @@ const ContactPerson = () => {
       </div>
     </>
   );
+};
+
+ContactPerson.propTypes = {
+  register: PropTypes.func.isRequired,
 };
 
 export default ContactPerson;

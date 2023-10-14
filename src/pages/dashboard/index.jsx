@@ -6,6 +6,7 @@ import { AreaChart } from "../../components/charts/areachart";
 // import { PolarChart } from "../../components/charts/polarchart";
 // import DoughnutChart from "../../components/charts/doghnut";
 import ProfileViewed from "../../components/charts/doghnut/ProfileViewed";
+import { ViewsChart } from "../../components/charts/activitycharts/Views";
 // import SelectField from "../../components/shared/inputs/SelectField";
 
 const Dashboard = () => {
@@ -45,33 +46,62 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
         <div className="w-full">
           <div className="flex justify-between py-2 px-2 text-white">
             <p className="text-sm">Project Views</p>
           </div>
-          <div className="bg-[#5AB177] p-3 rounded-xl"></div>
+          <div className="bg-[#5AB177] w-full h-full rounded-xl p-2">
+            <div className="flex justify-between">
+              <div className="flex flex-col text-white">
+                <h2 className="text-2xl">1500 </h2>{" "}
+                <p>Views of open projects</p>
+              </div>
+              <h2>...</h2>
+            </div>
+            <ViewsChart />
+          </div>
         </div>
         <div className="w-full">
           <div className="flex justify-between py-2 px-2 text-white">
             <p className="text-sm">Job advertisement views</p>
             <BsEyeFill className="text-[#F69E1E] text-xl" />
           </div>
-          <div className="bg-[#FF6666] p-3 rounded-xl"></div>
+          <div className="bg-[#FF6666] p-3 rounded-xl h-full">
+            <div className="flex flex-col text-white">
+              <h2 className="text-2xl">1500 </h2> <p>Views of open projects</p>
+            </div>
+
+            <ViewsChart />
+          </div>
         </div>
         <div className="w-full">
           <div className="flex justify-between py-2 px-2 text-white">
             <p className="text-sm">Applications received</p>
             <BsEyeFill className="text-[#F69E1E] text-xl" />
           </div>
-          <div className="bg-[#F3C130] p-3 rounded-xl"></div>
+          <div className="h-full bg-[#F3C130] p-3 rounded-xl">
+            <div className="flex flex-col text-white">
+              <h2 className="text-2xl">1500 </h2> <p>Views of open projects</p>
+            </div>
+            <ViewsChart />
+          </div>
         </div>
         <div className="w-full">
           <div className="flex justify-between py-2 px-2 text-white">
             <p className="text-sm">Expressions of Interest received</p>
             <BsEyeFill className="text-[#F69E1E] text-xl" />
           </div>
-          <div className="bg-[#8A70D6] p-3 rounded-xl"></div>
+          <div className="h-full bg-[#8A70D6] p-3 rounded-xl">
+            <div className="flex justify-between">
+              <div className="flex flex-col text-white">
+                <h2 className="text-2xl">1500 </h2>{" "}
+                <p>Views of open projects</p>
+              </div>
+              <h2>...</h2>
+            </div>
+            <ViewsChart />
+          </div>
         </div>
       </div>
 
